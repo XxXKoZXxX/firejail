@@ -1,49 +1,10 @@
-# Firejail profile for JDownloader
+# Firejail profile for jdownloader
 # This file is overwritten after every install/update
 # Persistent local customizations
-include JDownloader.local
+include jdownloader.local
 # Persistent global definitions
-include globals.local
+# added by included profile
+#include globals.local
 
-noblacklist ${HOME}/.jd
-
-# Allow java (blacklisted by disable-devel.inc)
-include allow-java.inc
-
-include disable-common.inc
-include disable-devel.inc
-include disable-exec.inc
-include disable-interpreters.inc
-include disable-programs.inc
-include disable-xdg.inc
-
-mkdir ${HOME}/.jd
-whitelist ${HOME}/.jd
-whitelist ${DOWNLOADS}
-include whitelist-common.inc
-include whitelist-var-common.inc
-
-caps.drop all
-ipc-namespace
-netfilter
-no3d
-nodvd
-nogroups
-noinput
-nonewprivs
-noroot
-nosound
-notv
-nou2f
-novideo
-protocol unix,inet,inet6
-seccomp
-
-private-cache
-private-dev
-private-tmp
-
-dbus-user none
-dbus-system none
-
-restrict-namespaces
+# Redirect
+include JDownloader.profile

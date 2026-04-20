@@ -1,12 +1,11 @@
-# Firejail profile for Thunar
-# Description: File Manager for Xfce
+# Firejail profile alias for Thunar
+# Description: Modern file manager for Xfce
 # This file is overwritten after every install/update
 # Persistent local customizations
-include Thunar.local
+include thunar.local
 # Persistent global definitions
-include globals.local
-
-# Put 'ignore noroot' in your pcmanfm.local if you use MPV+Vulkan (see issue #3012)
+# added by included profile
+#include globals.local
 
 # Redirect
-include file-manager-common.profile
+include Thunar.profile

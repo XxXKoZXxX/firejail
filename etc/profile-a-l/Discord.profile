@@ -1,10 +1,19 @@
-# Firejail profile for Discord
+# Firejail profile for discord
 # This file is overwritten after every install/update
 # Persistent local customizations
-include Discord.local
+include discord.local
 # Persistent global definitions
-# added by included profile
-#include globals.local
+include globals.local
+
+noblacklist ${HOME}/.config/discord
+
+mkdir ${HOME}/.config/discord
+whitelist ${HOME}/.config/discord
+whitelist /opt/Discord
+whitelist /opt/discord
+whitelist /usr/share/discord
+
+private-bin Discord,discord
 
 # Redirect
-include discord.profile
+include discord-common.profile

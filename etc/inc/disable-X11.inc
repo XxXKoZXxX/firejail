@@ -1,8 +1,17 @@
 # This file is overwritten during software install.
 # Persistent customizations should go in a .local file.
-include disable-X11.local
+include disable-x11.local
 
-warn This file is deprecated; use disable-x11.inc (lowercase) instead.
-
-# Redirect
-include disable-x11.inc
+blacklist /tmp/.X11-unix
+blacklist ${HOME}/.Xauthority
+blacklist ${HOME}/.Xdefaults
+blacklist ${HOME}/.Xdefaults-*
+blacklist ${RUNUSER}/gdm/Xauthority
+blacklist ${RUNUSER}/.mutter-Xwaylandauth*
+blacklist ${RUNUSER}/xauth_*
+#blacklist ${RUNUSER}/[[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]]-[[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]]-[[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]]-[[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]]-[[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]][[:xdigit:]]
+blacklist /tmp/xauth*
+blacklist /tmp/.ICE-unix
+blacklist ${RUNUSER}/ICEauthority
+rmenv DISPLAY
+rmenv XAUTHORITY
